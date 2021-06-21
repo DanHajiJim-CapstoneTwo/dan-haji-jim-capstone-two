@@ -1,0 +1,8 @@
+.container {
+  border: black solid 5px;
+  max-width: 300px;
+}
+
+.fixed-width {
+  max-width: 250px;
+}
