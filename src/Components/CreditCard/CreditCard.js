@@ -1,0 +1,39 @@
+import React, { Component } from "react";
+
+export default class CreditCard extends Component {
+  render() {
+    return (
+      <div>
+        <form>
+          <h3>Card Information</h3>
+          <div>
+            <h6>Credit Card</h6>
+            <select name="selectList" id="selectLIst">
+              <option value="option 1">Select One...</option>
+              <option value="option 2">VISA</option>
+              <option value="option 3">Mastercard</option>
+              <option value="option 4">American Express</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="count">Card #: </label>
+            <input id="count" type="text" name="count" />
+          </div>
+        </form>
+        <form>
+          <div>
+            <label htmlFor="count">Expiration Date: </label>
+            <input id="count" type="text" name="count" />
+          </div>
+        </form>
+        <form>
+          <div>
+            <label htmlFor="count">CC #: </label>
+            <input id="count" type="text" name="count" />
+          </div>
+          <input type="submit" value="Buy Now!" />
+        </form>
+      </div>
+    );
+  }
+}

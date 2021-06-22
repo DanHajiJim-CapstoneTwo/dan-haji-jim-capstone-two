@@ -1,24 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Checkout from "./Components/Checkout/Checkout";
+import CreditCard from "./Components/CreditCard/CreditCard";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>Adding a paragraph to test git branch</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Products</h1>
+      <Checkout />
+      <CreditCard />
     </div>
   );
 }
