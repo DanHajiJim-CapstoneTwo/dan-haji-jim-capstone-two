@@ -17,7 +17,13 @@ export default class CreditCard extends Component {
           </div>
           <div>
             <label htmlFor="count">Card Holder Name: </label>
-            <input id="count" type="text" name="count" required />
+            <input
+              id="count"
+              type="text"
+              name="count"
+              placeholder="John Doe..."
+              required
+            />
           </div>
           <div>
             <label htmlFor="count">Card #: </label>
@@ -26,6 +32,7 @@ export default class CreditCard extends Component {
               type="text"
               name="count"
               maxlength="19"
+              placeholder="1111-2222-3333-4444"
               required
             />
           </div>
@@ -35,7 +42,14 @@ export default class CreditCard extends Component {
           </div>
           <div>
             <label htmlFor="count">CC #: </label>
-            <input id="count" type="text" name="count" maxlength="3" required />
+            <input
+              id="count"
+              type="text"
+              name="count"
+              maxlength="3"
+              placeholder="123"
+              required
+            />
           </div>
           <input type="submit" value="Buy Now!" />
         </form>
