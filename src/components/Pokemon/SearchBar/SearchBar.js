@@ -4,7 +4,7 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: undefined,
+      value: "",
     }
   }
 
@@ -15,7 +15,7 @@ class SearchBar extends Component {
   //EVENT HANDLERS
   
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({value: event.target.value});
   }
 
@@ -32,8 +32,6 @@ class SearchBar extends Component {
         // .catch(console.log)
       );
   };
-
-
 
 
   //RENDER
