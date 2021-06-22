@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   handlePokemonsUpdate = (pokemons) => {
-    console.log(pokemons);
+    // console.log("Pokemon Data:", pokemons);
     this.setState({
       pokemons: pokemons,
     });
@@ -24,7 +24,7 @@ class App extends Component {
       <div className="App">
         <SearchBar handlePokemonsUpdate={this.handlePokemonsUpdate} />
         {this.state.pokemons.map((pokemon, index) => {
-          return <Pokemon url={pokemon.pokemon.url} />;
+          return  <Pokemon key={`${pokemon}-${index}`} url={pokemon.pokemon.url} />;
         })}
       </div>
     );

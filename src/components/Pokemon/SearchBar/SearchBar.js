@@ -3,17 +3,13 @@ import React, { Component } from "react";
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = this.getInitialState();
+    this.state = {
+      value: "",
+    };
   }
 
 
-  getInitialState = () => ({
-  value: "",
-})
-
-  resetState = () => {
-  this.setState(this.getInitialState())
-}
+ 
   //EVENT HANDLERS
  
 
@@ -25,16 +21,20 @@ class SearchBar extends Component {
   onSubmitHandler = (event) => {
     event.preventDefault();
   //  const {value} = this.state;
+  // console.log(this.state.value)
     fetch(`https://pokeapi.co/api/v2/type/${this.state.value}/`)
       .then((response) => response.json())
       .then(
         (data) => {
+          // console.log(data.pokemon);
           this.props.handlePokemonsUpdate(data.pokemon);
+          
         }
         // .catch(console.log)
-      );
-
-  };
+      )
+      .catch((err) => {
+        (console.log(err.message))
+      })};
 
 
   //RENDER
@@ -47,7 +47,7 @@ class SearchBar extends Component {
             <input
               type="text"
               id="pokemonType"
-              name="pokemonType"
+              name="value"
               onChange={this.handleChange}
               value={this.state.value}
             />
