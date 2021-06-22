@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 
-
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: "",
-    }
+    this.state = this.getInitialState();
   }
-  
+
+
+  getInitialState = () => ({
+  value: "",
+})
+
+  resetState = () => {
+  this.setState(this.getInitialState())
+}
   //EVENT HANDLERS
-  
+ 
 
   handleChange = (event) => {
     this.setState({value: event.target.value});
@@ -28,7 +33,7 @@ class SearchBar extends Component {
         }
         // .catch(console.log)
       );
-      this.setState({value: ""});
+
   };
 
 
