@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -7,10 +8,6 @@ class SearchBar extends Component {
       value: "",
     }
   }
-
-
-
-
   
   //EVENT HANDLERS
   
@@ -31,6 +28,7 @@ class SearchBar extends Component {
         }
         // .catch(console.log)
       );
+      this.setState({value: ""});
   };
 
 
