@@ -11,10 +11,11 @@ function App() {
     <div className="App">
       <nav>
         <Link to="/">Home</Link>
+        <br/>
+        <Link to="/components/Checkout">Checkout</Link>
         <br />
-        <Link to="./components/Checkout">Checkout</Link>
-        <br />
-        <Link to="./components/Checkout">CreditCard</Link>
+        <Link to="/components/CreditCard">Checkout</Link>
+        
       </nav>
       <Switch>
         <Route exact path="/">
