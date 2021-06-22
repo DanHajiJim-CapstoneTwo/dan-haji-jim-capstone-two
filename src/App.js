@@ -11,21 +11,20 @@ function App() {
     <div className="App">
       <nav>
         <Link to="/">Home</Link>
-        <br/>
+        <br />
         <Link to="/components/Checkout">Checkout</Link>
         <br />
-        <Link to="/components/CreditCard">Checkout</Link>
-        
+        <Link to="/components/CreditCard">Credit Card</Link>
       </nav>
       <Switch>
         <Route exact path="/">
           <Home />
+          <Route path="/components/CreditCard">
+            <Checkout />
+          </Route>
         </Route>
         <Route path="/components/CreditCard">
           <CreditCard />
-        </Route>
-        <Route path="/components/CreditCard">
-          <Checkout />
         </Route>
       </Switch>
     </div>

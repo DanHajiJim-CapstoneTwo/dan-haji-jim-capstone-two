@@ -25,7 +25,7 @@ export default class CreditCard extends Component {
               id="count"
               type="text"
               name="count"
-              maxlength="19"
+              maxLength="19"
               required
             />
           </div>
@@ -35,7 +35,7 @@ export default class CreditCard extends Component {
           </div>
           <div>
             <label htmlFor="count">CC #: </label>
-            <input id="count" type="text" name="count" maxlength="3" required />
+            <input id="count" type="text" name="count" maxLength="3" required />
           </div>
           <input type="submit" value="Buy Now!" />
         </form>
