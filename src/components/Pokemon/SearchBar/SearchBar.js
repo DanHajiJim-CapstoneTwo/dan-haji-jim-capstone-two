@@ -1,10 +1,29 @@
 import React, { Component } from "react";
 
 class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: undefined,
+    }
+  }
+
+
+
+
+  
+  //EVENT HANDLERS
+  
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+
   onSubmitHandler = (event) => {
     event.preventDefault();
-    // const { pokemonType } = this.state;
-    fetch(`https://pokeapi.co/api/v2/type/water/`)
+  //  const {value} = this.state;
+    fetch(`https://pokeapi.co/api/v2/type/${this.state.value}/`)
       .then((response) => response.json())
       .then(
         (data) => {
@@ -14,6 +33,10 @@ class SearchBar extends Component {
       );
   };
 
+
+
+
+  //RENDER
   render() {
     return (
       <div>
@@ -24,7 +47,8 @@ class SearchBar extends Component {
               type="text"
               id="pokemonType"
               name="pokemonType"
-              // value={pokemonType}
+              onChange={this.handleChange}
+              value={this.state.value}
             />
           </label>
           <input type="submit" value="Submit" />
