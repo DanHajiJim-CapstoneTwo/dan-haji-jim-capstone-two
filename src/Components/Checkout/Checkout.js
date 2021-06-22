@@ -9,19 +9,15 @@ export default class Checkout extends Component {
           <h3>Customer Information</h3>
           <div>
             <label htmlFor="count">Name: </label>
-            <input id="count" type="text" name="count" />
+            <input id="count" type="text" name="count" required />
           </div>
-        </form>
-        <form>
           <div>
             <label htmlFor="count">Address: </label>
-            <input id="count" type="text" name="count" />
+            <input id="count" type="text" name="count" required />
           </div>
-        </form>
-        <form>
           <div>
             <label htmlFor="count">Phone Number: </label>
-            <input id="count" type="text" name="count" />
+            <input id="count" type="phone" name="count" required />
           </div>
         </form>
       </div>

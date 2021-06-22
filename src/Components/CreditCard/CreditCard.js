@@ -8,7 +8,7 @@ export default class CreditCard extends Component {
           <h3>Card Information</h3>
           <div>
             <h6>Credit Card</h6>
-            <select name="selectList" id="selectLIst">
+            <select name="selectList" id="selectLIst" required>
               <option value="option 1">Select One...</option>
               <option value="option 2">VISA</option>
               <option value="option 3">Mastercard</option>
@@ -17,19 +17,15 @@ export default class CreditCard extends Component {
           </div>
           <div>
             <label htmlFor="count">Card #: </label>
-            <input id="count" type="text" name="count" />
+            <input id="count" type="text" name="count" required />
           </div>
-        </form>
-        <form>
           <div>
             <label htmlFor="count">Expiration Date: </label>
-            <input id="count" type="text" name="count" />
+            <input id="count" type="month" name="count" required />
           </div>
-        </form>
-        <form>
           <div>
             <label htmlFor="count">CC #: </label>
-            <input id="count" type="text" name="count" />
+            <input id="count" type="text" name="count" required />
           </div>
           <input type="submit" value="Buy Now!" />
         </form>
