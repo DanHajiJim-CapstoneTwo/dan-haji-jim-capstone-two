@@ -7,7 +7,7 @@ export default class CreditCard extends Component {
         <form>
           <h3>Card Information</h3>
           <div>
-            <h6>Credit Card</h6>
+            <label htmlFor="count">Credit Card: </label>
             <select name="selectList" id="selectLIst" required>
               <option value="option 1">Select One...</option>
               <option value="option 2">VISA</option>
