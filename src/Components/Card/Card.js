@@ -14,7 +14,7 @@ export default class Pokemon extends Component {
   }
 
   componentDidMount() {
-    fetch("https://pokeapi.co/api/v2/pokemon/1/")
+    fetch(this.props.url)
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -44,8 +44,6 @@ export default class Pokemon extends Component {
             {return txt.charAt(0).toUpperCase() + 
             txt.substr(1).toLowerCase()})}
             </p>
-
-            <p>{this.state.weight} lbs.</p>
           </div>
         </div>
       </section>

@@ -46,7 +46,7 @@ export default class Pokedex extends Component {
       .filter((pocketMonster) => pocketMonster.name.includes(searchInput))
       .map((pocketMonster) => {
         console.log(pocketMonster);
-        return <Pokemon key={pocketMonster.url} name={pocketMonster.name} />;
+        return <Pokemon key={pocketMonster.url} name={pocketMonster.name} url={ pocketMonster.url}/>;
       });
     return (
       <div className="pokedex">
