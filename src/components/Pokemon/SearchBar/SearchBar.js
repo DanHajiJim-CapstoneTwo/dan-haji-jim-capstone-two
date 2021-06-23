@@ -8,34 +8,29 @@ class SearchBar extends Component {
     };
   }
 
-
- 
   //EVENT HANDLERS
- 
 
   handleChange = (event) => {
-    this.setState({value: event.target.value});
-  }
-
+    this.setState({ value: event.target.value });
+  };
 
   onSubmitHandler = (event) => {
     event.preventDefault();
-  //  const {value} = this.state;
-  // console.log(this.state.value)
+    //  const {value} = this.state;
+    // console.log(this.state.value)
     fetch(`https://pokeapi.co/api/v2/type/${this.state.value}/`)
       .then((response) => response.json())
       .then(
         (data) => {
-          // console.log(data.pokemon);
+          console.log(data.pokemon);
           this.props.handlePokemonsUpdate(data.pokemon);
-          
         }
         // .catch(console.log)
       )
       .catch((err) => {
-        (console.log(err.message))
-      })};
-
+        console.log(err.message);
+      });
+  };
 
   //RENDER
   render() {
