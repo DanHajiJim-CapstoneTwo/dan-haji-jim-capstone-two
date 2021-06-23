@@ -1,7 +1,6 @@
 // DEPENDENCIES
 import React, { Component } from "react";
 
-
 // STYLING
 import "./Pokemon.css";
 
@@ -16,7 +15,7 @@ export default class Pokemon extends Component {
     };
   }
   //ADD TO CART
-  // add "quantity: 0," to state 
+  // add "quantity: 0," to state
   // addToCart() {
   //   this.setState({quantity: this.state.quantity + 1})
   // }
@@ -42,8 +41,10 @@ export default class Pokemon extends Component {
     return (
       <div className="pokemon">
         <h4 className="name">Name: {name}</h4>
+        <span className="weight">Weight: {}</span>
+        <span className="ability">Ability: {}</span>
         <div className="info">
-          <h5>Lvl. {level}</h5>
+          <h5>Level {level}</h5>
           {caught ? (
             <button onClick={(event) => this.evolve()}>Level up!</button>
           ) : null}
