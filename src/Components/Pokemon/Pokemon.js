@@ -35,7 +35,7 @@ export default class Pokemon extends Component {
   }
   // RENDER POKEMON
   render() {
-    // const {name, type, weight, ability} = this.props
+    // const {name, weight, ability} = this.props
     const { name } = this.props;
     const { level, caught } = this.state;
     return (

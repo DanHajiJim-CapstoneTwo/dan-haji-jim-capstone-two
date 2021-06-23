@@ -14,7 +14,7 @@ export default class Pokemon extends Component {
   }
 
   componentDidMount() {
-    fetch(this.props.url)
+    fetch("https://pokeapi.co/api/v2/pokemon/1/")
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -46,8 +46,6 @@ export default class Pokemon extends Component {
             </p>
 
             <p>{this.state.weight} lbs.</p>
-
-            <button>$30</button>
           </div>
         </div>
       </section>
