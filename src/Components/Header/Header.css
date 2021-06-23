@@ -1,10 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+/*
+background-color: blue;
+*/
 .header {
   height: 20vh;
-  background-color: blue;
-  color: white;
+  background-image: url("./../../img/palm-leaf.png");
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
   font-weight: 600;
+  font-family: "Press Start 2P", cursive;
 }
