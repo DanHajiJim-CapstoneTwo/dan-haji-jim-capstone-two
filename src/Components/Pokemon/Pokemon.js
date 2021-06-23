@@ -16,6 +16,7 @@ export default class Pokemon extends Component {
       weight: "",
       ability: "",
       imgSrc: "",
+      imgBck: "",
     };
   }
   componentDidMount() {
@@ -28,6 +29,7 @@ export default class Pokemon extends Component {
         weight: response.data.weight,
         ability: response.data.abilities[0].ability.name,
         imgSrc: response.data.sprites.front_default,
+        imgBck: response.data.sprites.back_default,
       });
     });
   }
@@ -53,13 +55,16 @@ export default class Pokemon extends Component {
   }
   // RENDER POKEMON
   render() {
-    // const {name, weight, ability} = this.props
+    //state needs to render 
     const { name } = this.props;
-    const { level, caught, weight, ability, imgSrc } = this.state;
+    const { level, caught, weight, ability, imgSrc, imgBck } = this.state;
     return (
       <div className="pokemon">
         <h4 className="name">Name: {name}</h4>
-        <img src={imgSrc} alt={name}/>
+        <div className="imgContainer">
+        <img src={imgSrc} alt="name on front"/>
+        <img src={imgBck} alt="name on back"/>
+        </div>
         <span className="weight">Weight: {weight}</span>
         <span className="ability">Ability: {ability}</span>
         <div className="info">
