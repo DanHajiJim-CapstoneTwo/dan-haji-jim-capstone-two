@@ -1,14 +1,25 @@
 import React, { Component } from "react";
+import { FaKey } from "react-icons/fa";
 import "./Cart.css";
 
 export default class Cart extends Component {
-  state = {
-    cartItems: 0,
-    product: "",
-    price: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      cartItems: this.props.pokemons,
+    };
+  }
 
   render() {
+    let sum = 0;
+    for (let i = 0; i < this.state.cartItems.length; i++) {
+      sum = sum + this.state.cartItems[i].price;
+    }
+
+    let tax = sum * 0.1;
+
+    let total = sum + tax;
+
     return (
       <div className="container">
         <h4>
@@ -17,47 +28,35 @@ export default class Cart extends Component {
             <b>4</b>
           </span>
         </h4>
-        <p>
-          Product 1
-          <span style={{ float: "right" }}>
-            <b>$15</b>
-          </span>
-        </p>
-        <p>
-          Product 2
-          <span style={{ float: "right" }}>
-            <b>$25</b>
-          </span>
-        </p>
-        <p>
-          Product 3
-          <span style={{ float: "right" }}>
-            <b>$40</b>
-          </span>
-        </p>
-        <p>
-          Product 4
-          <span style={{ float: "right" }}>
-            <b>$45</b>
-          </span>
-        </p>
+        <div>
+          <ol>
+            {this.props.pokemons.map((name) => {
+              return (
+                <div>
+                  <li>{name.name}</li>
+                  <span style={{ float: "right" }}>
+                    ${name.price.toFixed(2)}
+                  </span>
+                </div>
+              );
+            })}
+            ,
+          </ol>
+        </div>
         <hr></hr>
         <p>
-          Subtotal
-          <span style={{ float: "right" }}>
-            <b>$125</b>
-          </span>
+          Subtotal: <span style={{ float: "right" }}>${sum.toFixed(2)}</span>
         </p>
         <p>
           Tax (10%)
           <span style={{ float: "right" }}>
-            <b>$12.50</b>
+            <b>${tax.toFixed(2)}</b>
           </span>
         </p>
         <p>
           Total
           <span style={{ float: "right" }}>
-            <b>$137.50</b>
+            <b>${total.toFixed(2)}</b>
           </span>
         </p>
       </div>
