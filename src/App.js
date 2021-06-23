@@ -1,34 +1,35 @@
-import React from "react";
-import { Link, Switch, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Checkout from "./components/Checkout";
-import CreditCard from "./components/CreditCard";
-
+// DEPENDENCIES
+import React, { Component } from "react";
+// CHILD COMPONENTS
+import Header from "./Components/Header/Header";
+import PokeProducts from "./Components/PokeProducts/PokeProducts";
+import Card from "./Components/Card/Card";
+// STYLING
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <nav>
-        <Link to="/">Home</Link>
-        <br />
-        <Link to="/components/Checkout">Checkout</Link>
-        <br />
-        <Link to="/components/CreditCard">Credit Card</Link>
-      </nav>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-          <Route path="/components/CreditCard">
-            <Checkout />
-          </Route>
-        </Route>
-        <Route path="/components/CreditCard">
-          <CreditCard />
-        </Route>
-      </Switch>
-    </div>
-  );
+// CLASS COMPONENT
+class App extends Component {
+  constructor() {
+    super();
+    // STATE
+    this.state = {
+      owner: "",
+    };
+  }
+  // RENDER APP
+  render() {
+    const { owner } = this.state;
+    return (
+      <div className="App">
+        <Header name={owner} />
+        <PokeProducts />
+        <Card />
+      </div>
+    );
+  }
 }
-
+//change return from SearchBar "capstone"
+//handleChange = (event) => {
+//   this.setState({value: event.target.value});
+// }
 export default App;
