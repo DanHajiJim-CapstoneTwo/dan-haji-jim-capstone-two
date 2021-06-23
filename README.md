@@ -26,4 +26,6 @@ Team Blue Barracudas employed a number of strategies throughout the life of the 
 
 If you are interested in seeing and interracting with this project locally, you can fork the repo through GitHub's functionality and further clone from your own repository to your machine locally.
 
+Run npm-start to open the app in a local port (typically port 3000)!
+
 Have fun taking a peek under the hood!
