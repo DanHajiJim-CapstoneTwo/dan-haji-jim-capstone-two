@@ -30,48 +30,42 @@ export default class Cart extends Component {
 
     let total = sum + tax;
 
+    const cartItems = this.props.cartItems.map((name) => {
+      return (
+        <li>
+          {name.name}{" "}
+          <span style={{ float: "right" }}>${name.price.toFixed(2)}</span>
+        </li>
+      );
+    });
+
     return (
       <div className="container">
         <h4>
           Cart
-          <span style={{ float: "right" }}>
+          <span className="price">
             <b>{cartLength}</b>
           </span>
         </h4>
         <form>
-          <div>
-            <ol>
-              {this.props.cartItems.map((name) => {
-                return (
-                  <div>
-                    <li>
-                      {name.name}{" "}
-                      <span style={{ float: "right" }}>
-                        ${name.price.toFixed(2)}
-                      </span>
-                    </li>
-                  </div>
-                );
-              })}
-            </ol>
-          </div>
+          <ol>{cartItems}</ol>
           <hr></hr>
           <p>
-            Subtotal: <span style={{ float: "right" }}>${sum.toFixed(2)}</span>
+            Subtotal: <span className="price">${sum.toFixed(2)}</span>
           </p>
           <p>
             Tax (10%)
-            <span style={{ float: "right" }}>
+            <span className="price">
               <b>${tax.toFixed(2)}</b>
             </span>
           </p>
           <p>
             Total
-            <span style={{ float: "right" }}>
+            <span className="price">
               <b>${total.toFixed(2)}</b>
             </span>
           </p>
-          <input type="submit" value="Checkout!" style={{ float: "right" }} />
+          <input type="submit" value="Checkout!" className="price" />
         </form>
       </div>
     );
