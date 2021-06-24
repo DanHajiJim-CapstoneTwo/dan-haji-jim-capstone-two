@@ -32,17 +32,28 @@ export default class Pokemon extends Component {
       <section>
         <div className="container">
           {/* <div>Pokemon Info</div> */}
-          <img className="fixed-width" src={this.state.url} alt={this.state.name} />
+          <img
+            className="fixed-width"
+            src={this.state.url}
+            alt={this.state.name}
+          />
           <div>
             <h2>{this.state.name.toUpperCase()}</h2>
 
-            <p>{this.state.ability.replace(/\w\S*/g, function(txt)
-            {return txt.charAt(0).toUpperCase() + 
-            txt.substr(1).toLowerCase()})}</p>
+            <p>
+              {this.state.ability.replace(/\w\S*/g, function (txt) {
+                return (
+                  txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+                );
+              })}
+            </p>
 
-            <p>{this.state.type.replace(/\w\S*/g, function(txt)
-            {return txt.charAt(0).toUpperCase() + 
-            txt.substr(1).toLowerCase()})}
+            <p>
+              {this.state.type.replace(/\w\S*/g, function (txt) {
+                return (
+                  txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+                );
+              })}
             </p>
           </div>
         </div>

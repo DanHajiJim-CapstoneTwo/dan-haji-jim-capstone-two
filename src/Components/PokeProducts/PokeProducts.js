@@ -21,7 +21,7 @@ export default class Pokedex extends Component {
   handleSearch(value) {
     this.setState({ searchInput: value });
   }
-  // fetch without axios 
+  // fetch without axios
   // componentDidMount() {
   //   fetch("https://pokeapi.co/api/v2/pokemon?limit=5")
   //     .then((data) => data.json())
@@ -37,14 +37,12 @@ export default class Pokedex extends Component {
     // GET POKEMON
     // https://pokeapi.co/api/v2/pokemon/
     // https://pokeapi.co/api/v2/pokemon/?offset=50&limit=50
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=5")
-      .then((response) => {
-        console.log("PokeAPI response: ", response);
-        this.setState({
-          pokemon: response.data.results,
-        });
+    axios.get("https://pokeapi.co/api/v2/pokemon?limit=5").then((response) => {
+      console.log("PokeAPI response: ", response);
+      this.setState({
+        pokemon: response.data.results,
       });
+    });
   }
   // RENDER POKEDEX
   render() {
@@ -58,7 +56,15 @@ export default class Pokedex extends Component {
       .filter((pocketMonster) => pocketMonster.name.includes(searchInput))
       .map((pocketMonster) => {
         console.log(pocketMonster);
-        return <Pokemon key={pocketMonster.url} name={pocketMonster.name} url={ pocketMonster.url} />;
+        return (
+          <Pokemon
+            key={pocketMonster.url}
+            name={pocketMonster.name}
+            url={pocketMonster.url}
+            cartItems={this.props.cartItems}
+            handleCartUpdate={this.props.handleCartUpdate}
+          />
+        );
       });
     return (
       <div className="pokedex">

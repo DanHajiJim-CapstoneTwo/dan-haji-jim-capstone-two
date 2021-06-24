@@ -7,7 +7,7 @@ class CartIcon extends Component {
     return (
       <div>
         <p style={{ float: "right" }}>
-          <FaShoppingCart size={24} /> 4
+          <FaShoppingCart size={24} /> {this.props.cartCount}
         </p>
       </div>
     );

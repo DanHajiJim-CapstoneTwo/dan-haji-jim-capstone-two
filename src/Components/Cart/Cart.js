@@ -9,6 +9,15 @@ export default class Cart extends Component {
     };
   }
 
+  handleCartUpdate = (pokemon) => {
+    const pokemonR = [...this.state.cartItems];
+    pokemonR.push(pokemon);
+
+    this.setState({
+      cartItems: pokemonR,
+    });
+  };
+
   render() {
     const cartLength = this.state.cartItems.length;
 

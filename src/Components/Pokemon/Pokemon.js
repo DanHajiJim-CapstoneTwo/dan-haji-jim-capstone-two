@@ -17,6 +17,7 @@ export default class Pokemon extends Component {
       ability: "",
       imgSrc: "",
       imgBck: "",
+      price: 30,
     };
   }
   componentDidMount() {
@@ -34,11 +35,17 @@ export default class Pokemon extends Component {
     });
   }
 
-  //ADD TO CART
+  // ADD TO CART
   // add "quantity: 0," to state
-  // addToCart() {
-  //   this.setState({quantity: this.state.quantity + 1})
-  // }
+  // quantity: this.state.quantity + 1
+  addToCart() {
+    this.setState({
+      name: this.props.name,
+      weight: this.props.weight,
+      imgSrc: this.props.imgSrc,
+      ability: this.props.ability,
+    });
+  }
 
   // CATCH POKEMON
   catch() {
@@ -53,17 +60,19 @@ export default class Pokemon extends Component {
     const { level: currentLevel } = this.state;
     this.setState({ level: currentLevel + 1 });
   }
+
   // RENDER POKEMON
   render() {
-    //state needs to render 
+    //state needs to render
     const { name } = this.props;
-    const { level, caught, weight, ability, imgSrc, imgBck } = this.state;
+    const { level, caught, weight, ability, imgSrc, imgBck, price } =
+      this.state;
     return (
       <div className="pokemon">
         <h4 className="name">Name: {name}</h4>
         <div className="imgContainer">
-        <img src={imgSrc} alt="name on front"/>
-        <img src={imgBck} alt="name on back"/>
+          <img src={imgSrc} alt="name on front" />
+          <img src={imgBck} alt="name on back" />
         </div>
         <span className="weight">Weight: {weight}</span>
         <span className="ability">Ability: {ability}</span>
@@ -83,7 +92,13 @@ export default class Pokemon extends Component {
         </div>
         <br />
         <div className="cart">
-          <button onClick={(event) => this.addToCart()}>Add to Cart</button>
+          <button
+            onClick={(event) =>
+              this.props.handleCartUpdate({ name, imgSrc, price })
+            }
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     );

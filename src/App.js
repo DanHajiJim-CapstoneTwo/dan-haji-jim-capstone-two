@@ -1,4 +1,3 @@
-
 // DEPENDENCIES
 import React, { Component } from "react";
 
@@ -43,20 +42,34 @@ class App extends Component {
     // STATE
     this.state = {
       owner: "",
+      cartItems: fakedata,
     };
   }
+
+  handleCartUpdate = (pokemon) => {
+    const pokemonR = [...this.state.cartItems];
+    pokemonR.push(pokemon);
+
+    this.setState({
+      cartItems: pokemonR,
+    });
+  };
+
   // RENDER APP
   render() {
     const { owner } = this.state;
     return (
       <div className="App">
         <Header name={owner} />
-        <PokeProducts />
+        <PokeProducts
+          cartItems={this.state.cartItems}
+          handleCartUpdate={this.handleCartUpdate}
+        />
         <Card />
-      <CartIcon />
-      <Checkout />
-      <CreditCard />
-      <Cart pokemons={fakedata} />
+        <CartIcon cartCount={this.state.cartItems.length} />
+        <Checkout />
+        <CreditCard />
+        <Cart pokemons={this.state.cartItems} />
       </div>
     );
   }
