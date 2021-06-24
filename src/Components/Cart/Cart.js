@@ -11,8 +11,10 @@ export default class Cart extends Component {
   }
 
   render() {
+    const cartLength = this.state.cartItems.length;
+
     let sum = 0;
-    for (let i = 0; i < this.state.cartItems.length; i++) {
+    for (let i = 0; i < cartLength; i++) {
       sum = sum + this.state.cartItems[i].price;
     }
 
@@ -25,40 +27,44 @@ export default class Cart extends Component {
         <h4>
           Cart
           <span style={{ float: "right" }}>
-            <b>4</b>
+            <b>{cartLength}</b>
           </span>
         </h4>
-        <div>
-          <ol>
-            {this.props.pokemons.map((name) => {
-              return (
-                <div>
-                  <li>{name.name}</li>
-                  <span style={{ float: "right" }}>
-                    ${name.price.toFixed(2)}
-                  </span>
-                </div>
-              );
-            })}
-            ,
-          </ol>
-        </div>
-        <hr></hr>
-        <p>
-          Subtotal: <span style={{ float: "right" }}>${sum.toFixed(2)}</span>
-        </p>
-        <p>
-          Tax (10%)
-          <span style={{ float: "right" }}>
-            <b>${tax.toFixed(2)}</b>
-          </span>
-        </p>
-        <p>
-          Total
-          <span style={{ float: "right" }}>
-            <b>${total.toFixed(2)}</b>
-          </span>
-        </p>
+        <form>
+          <div>
+            <ol>
+              {this.props.pokemons.map((name) => {
+                return (
+                  <div>
+                    <li>
+                      {name.name}{" "}
+                      <span style={{ float: "right" }}>
+                        ${name.price.toFixed(2)}
+                      </span>
+                    </li>
+                  </div>
+                );
+              })}
+            </ol>
+          </div>
+          <hr></hr>
+          <p>
+            Subtotal: <span style={{ float: "right" }}>${sum.toFixed(2)}</span>
+          </p>
+          <p>
+            Tax (10%)
+            <span style={{ float: "right" }}>
+              <b>${tax.toFixed(2)}</b>
+            </span>
+          </p>
+          <p>
+            Total
+            <span style={{ float: "right" }}>
+              <b>${total.toFixed(2)}</b>
+            </span>
+          </p>
+          <input type="submit" value="Checkout!" style={{ float: "right" }} />
+        </form>
       </div>
     );
   }

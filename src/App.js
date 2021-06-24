@@ -20,6 +20,11 @@ const fakedata = [
     url: "https://pokeapi.co/api/v2/pokemon/3/",
     price: 30,
   },
+  {
+    name: "Charizard",
+    url: "https://pokeapi.co/api/v2/pokemon/3/",
+    price: 30,
+  },
 ];
 
 function App() {
