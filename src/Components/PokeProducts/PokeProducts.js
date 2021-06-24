@@ -21,6 +21,18 @@ export default class Pokedex extends Component {
   handleSearch(value) {
     this.setState({ searchInput: value });
   }
+  // fetch without axios 
+  // componentDidMount() {
+  //   fetch("https://pokeapi.co/api/v2/pokemon?limit=5")
+  //     .then((data) => data.json())
+  //     .then((data) => {
+  //       this.setState({
+  //         // console.log("PokeAPI response: ", data);
+  //         pokemon: data.results,
+  //       })
+  //         .catch(console.log());
+  //     })
+  // }
   componentDidMount() {
     // GET POKEMON
     // https://pokeapi.co/api/v2/pokemon/
@@ -46,7 +58,7 @@ export default class Pokedex extends Component {
       .filter((pocketMonster) => pocketMonster.name.includes(searchInput))
       .map((pocketMonster) => {
         console.log(pocketMonster);
-        return <Pokemon key={pocketMonster.url} name={pocketMonster.name} url={ pocketMonster.url}/>;
+        return <Pokemon key={pocketMonster.url} name={pocketMonster.name} url={ pocketMonster.url} />;
       });
     return (
       <div className="pokedex">

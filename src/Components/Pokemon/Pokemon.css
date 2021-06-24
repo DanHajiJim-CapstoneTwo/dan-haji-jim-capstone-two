@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900");
+
 .pokemon {
   width: 150px;
   height: 200px;
   background-color: white;
   border: 2px solid black;
-  padding: 65px;
+  padding: 70px;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -58,4 +60,8 @@ img {
 .weight,
 .ability {
   text-transform: capitalize;
+}
+
+button {
+  cursor: pointer;
 }
