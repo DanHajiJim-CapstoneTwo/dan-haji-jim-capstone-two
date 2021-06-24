@@ -33,7 +33,7 @@ export default class Cart extends Component {
     const cartItems = this.props.cartItems.map((name) => {
       return (
         <li>
-          {name.name}{" "}
+          {name.name.toUpperCase()}{" "}
           <span style={{ float: "right" }}>${name.price.toFixed(2)}</span>
         </li>
       );
@@ -41,15 +41,16 @@ export default class Cart extends Component {
 
     return (
       <div className="container">
-        <h4>
-          Cart
-          <span className="price">
-            <b>{cartLength}</b>
-          </span>
-        </h4>
+        <div className="">
+          <h4>
+            Cart
+            <span className="price">
+              <b>{cartLength}</b>
+            </span>
+          </h4>
+        </div>
         <form>
           <ol>{cartItems}</ol>
-          <hr></hr>
           <p>
             Subtotal: <span className="price">${sum.toFixed(2)}</span>
           </p>

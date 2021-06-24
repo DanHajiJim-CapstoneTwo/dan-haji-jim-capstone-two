@@ -13,26 +13,26 @@ import CartIcon from "./Components/CartIcon/CartIcon";
 import "./App.css";
 
 const fakedata = [
-  {
-    name: "bulbasaur",
-    url: "https://pokeapi.co/api/v2/pokemon/1/",
-    price: 30,
-  },
-  {
-    name: "ivysaur",
-    url: "https://pokeapi.co/api/v2/pokemon/2/",
-    price: 30,
-  },
-  {
-    name: "venusaur",
-    url: "https://pokeapi.co/api/v2/pokemon/3/",
-    price: 30,
-  },
-  {
-    name: "Charizard",
-    url: "https://pokeapi.co/api/v2/pokemon/3/",
-    price: 30,
-  },
+  // {
+  //   name: "bulbasaur",
+  //   url: "https://pokeapi.co/api/v2/pokemon/1/",
+  //   price: 30,
+  // },
+  // {
+  //   name: "ivysaur",
+  //   url: "https://pokeapi.co/api/v2/pokemon/2/",
+  //   price: 30,
+  // },
+  // {
+  //   name: "venusaur",
+  //   url: "https://pokeapi.co/api/v2/pokemon/3/",
+  //   price: 30,
+  // },
+  // {
+  //   name: "Charizard",
+  //   url: "https://pokeapi.co/api/v2/pokemon/3/",
+  //   price: 30,
+  // },
 ];
 
 // CLASS COMPONENT
@@ -61,15 +61,19 @@ class App extends Component {
     return (
       <div className="App">
         <Header name={owner} />
-        <PokeProducts
-          cartItems={this.state.cartItems}
-          handleCartUpdate={this.handleCartUpdate}
-        />
-        <Card />
-        <CartIcon cartCount={this.state.cartItems.length} />
-        <Checkout />
-        <CreditCard />
-        <Cart cartItems={this.state.cartItems} />
+        <div className="app-container">
+          <PokeProducts
+            cartItems={this.state.cartItems}
+            handleCartUpdate={this.handleCartUpdate}
+          />
+          <Card />
+          <div className="cart-container">
+            <CartIcon cartCount={this.state.cartItems.length} />
+            <Checkout />
+            <CreditCard />
+            <Cart cartItems={this.state.cartItems} />
+          </div>
+        </div>
       </div>
     );
   }

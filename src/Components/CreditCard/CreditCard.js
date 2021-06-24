@@ -31,7 +31,7 @@ export default class CreditCard extends Component {
               id="count"
               type="text"
               name="count"
-              maxlength="19"
+              maxLength="19"
               placeholder="1111-2222-3333-4444"
               required
             />
@@ -46,12 +46,12 @@ export default class CreditCard extends Component {
               id="count"
               type="text"
               name="count"
-              maxlength="3"
+              maxLength="3"
               placeholder="123"
               required
             />
           </div>
-          <input type="submit" value="Buy Now!" />
+          {/* <input type="submit" value="" /> */}
         </form>
       </div>
     );

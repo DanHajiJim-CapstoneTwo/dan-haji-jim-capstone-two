@@ -37,7 +37,8 @@ export default class Pokedex extends Component {
     // GET POKEMON
     // https://pokeapi.co/api/v2/pokemon/
     // https://pokeapi.co/api/v2/pokemon/?offset=50&limit=50
-    axios.get("https://pokeapi.co/api/v2/pokemon?limit=5").then((response) => {
+    axios.get("https://pokeapi.co/api/v2/pokemon?limit=151")
+      .then((response) => {
       console.log("PokeAPI response: ", response);
       this.setState({
         pokemon: response.data.results,

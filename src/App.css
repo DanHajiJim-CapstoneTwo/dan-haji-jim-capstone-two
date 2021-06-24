@@ -1,0 +1,10 @@
+.app-container {
+  display: flex;
+  background-color: lightblue;
+  padding: 50px;
+
+}
+.cart-container{
+    display: flex;
+    flex-direction: column;
+}
