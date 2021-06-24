@@ -1,8 +1,17 @@
-import "./App.css";
+
+// DEPENDENCIES
+import React, { Component } from "react";
+
+// CHILD COMPONENTS
+import Header from "./Components/Header/Header";
+import PokeProducts from "./Components/PokeProducts/PokeProducts";
+import Card from "./Components/Card/Card";
 import Checkout from "./Components/Checkout/Checkout";
 import CreditCard from "./Components/CreditCard/CreditCard";
 import Cart from "./Components/Cart/Cart";
 import CartIcon from "./Components/CartIcon/CartIcon";
+// STYLING
+import "./App.css";
 
 const fakedata = [
   {
@@ -27,16 +36,30 @@ const fakedata = [
   },
 ];
 
-function App() {
-  return (
-    <div className="App">
+// CLASS COMPONENT
+class App extends Component {
+  constructor() {
+    super();
+    // STATE
+    this.state = {
+      owner: "",
+    };
+  }
+  // RENDER APP
+  render() {
+    const { owner } = this.state;
+    return (
+      <div className="App">
+        <Header name={owner} />
+        <PokeProducts />
+        <Card />
       <CartIcon />
-      <h1>Products</h1>
       <Checkout />
       <CreditCard />
       <Cart pokemons={fakedata} />
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
