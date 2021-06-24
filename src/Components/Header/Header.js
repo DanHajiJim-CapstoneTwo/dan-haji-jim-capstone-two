@@ -1,6 +1,6 @@
 // DEPENDENCIES
 import React from "react";
-import CartIcon from "../CartIcon/CartIcon";
+
 // STYLING
 import "./Header.css";
 

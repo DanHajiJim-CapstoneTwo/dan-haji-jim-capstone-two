@@ -1,6 +1,18 @@
 import React, { Component } from "react";
-
 export default class CreditCard extends Component {
+  jokeList = () => {
+    console.log("hello world");
+    const jokes = [
+      "Why do cows have hooves instead of feet? A: They lactose.",
+      "What do you call a cow with no legs? Ground beef.",
+      "What do you call a cow with two legs? Lean beef.",
+      "What do you call a cow with all of its legs? High steaks.",
+    ];
+    let userInput = prompt("Who was the first DI/AMEX Bootcamp instructor?");
+    if (userInput === "Dana") {
+      return alert(jokes[Math.floor(Math.random() * jokes.length)]);
+    }
+  };
   render() {
     return (
       <div>
@@ -31,7 +43,7 @@ export default class CreditCard extends Component {
               id="count"
               type="text"
               name="count"
-              maxLength="19"
+              maxlength="19"
               placeholder="1111-2222-3333-4444"
               required
             />
@@ -46,12 +58,23 @@ export default class CreditCard extends Component {
               id="count"
               type="text"
               name="count"
-              maxLength="3"
+              maxlength="3"
               placeholder="123"
               required
             />
           </div>
-          {/* <input type="submit" value="" /> */}
+          <div>
+            <label htmlFor="count">Discount Code: </label>
+            <button onClick={this.jokeList} type="button">
+              Apply Code!
+            </button>
+            {/* <button
+              onClick={this.jokeList}
+              input
+              type="submit"
+              value="Apply Code!"
+            /> */}
+          </div>
         </form>
       </div>
     );
