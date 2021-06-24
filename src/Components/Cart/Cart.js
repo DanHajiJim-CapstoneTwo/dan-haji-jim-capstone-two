@@ -2,28 +2,28 @@ import React, { Component } from "react";
 import "./Cart.css";
 
 export default class Cart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cartItems: this.props.pokemons,
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     cartItems: this.props.pokemons,
+  //   };
+  // }
 
-  handleCartUpdate = (pokemon) => {
-    const pokemonR = [...this.state.cartItems];
-    pokemonR.push(pokemon);
+  // handleCartUpdate = (pokemon) => {
+  //   const pokemonR = [...this.state.cartItems];
+  //   pokemonR.push(pokemon);
 
-    this.setState({
-      cartItems: pokemonR,
-    });
-  };
+  //   this.setState({
+  //     cartItems: pokemonR,
+  //   });
+  // };
 
   render() {
-    const cartLength = this.state.cartItems.length;
+    const cartLength = this.props.cartItems.length;
 
     let sum = 0;
     for (let i = 0; i < cartLength; i++) {
-      sum = sum + this.state.cartItems[i].price;
+      sum = sum + this.props.cartItems[i].price;
     }
 
     let tax = sum * 0.1;
@@ -41,7 +41,7 @@ export default class Cart extends Component {
         <form>
           <div>
             <ol>
-              {this.props.pokemons.map((name) => {
+              {this.props.cartItems.map((name) => {
                 return (
                   <div>
                     <li>

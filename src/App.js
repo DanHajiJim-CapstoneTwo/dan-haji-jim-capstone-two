@@ -69,7 +69,7 @@ class App extends Component {
         <CartIcon cartCount={this.state.cartItems.length} />
         <Checkout />
         <CreditCard />
-        <Cart pokemons={this.state.cartItems} />
+        <Cart cartItems={this.state.cartItems} />
       </div>
     );
   }
