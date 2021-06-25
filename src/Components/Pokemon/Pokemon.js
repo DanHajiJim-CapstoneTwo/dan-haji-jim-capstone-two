@@ -33,10 +33,10 @@ export default class Pokemon extends Component {
           imgSrc: response.data.sprites.front_default,
           imgBck: response.data.sprites.back_default,
         });
-      });
-    //   .catch ((error => {
-    //   console.log(error.response);
-    // });
+      })
+      .catch (error => {
+      console.log(error);
+    });
   }
   // ADD TO CART
   // add "quantity: 0," to state
