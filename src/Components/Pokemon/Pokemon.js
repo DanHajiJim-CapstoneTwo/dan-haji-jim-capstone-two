@@ -1,6 +1,6 @@
 // DEPENDENCIES
 import React, { Component } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 // STYLING
 import "./Pokemon.css";
@@ -24,7 +24,8 @@ export default class Pokemon extends Component {
     // GET POKEMON
     // https://pokeapi.co/api/v2/pokemon/
     // https://pokeapi.co/api/v2/pokemon/?offset=50&limit=50
-    axios.get(this.props.url)
+    axios
+      .get(this.props.url)
       .then((response) => {
         console.log("PokeAPI response: ", response);
         this.setState({
@@ -34,9 +35,9 @@ export default class Pokemon extends Component {
           imgBck: response.data.sprites.back_default,
         });
       })
-      .catch (error => {
-      console.log(error);
-    });
+      .catch((error) => {
+        console.log(error);
+      });
   }
   // ADD TO CART
   // add "quantity: 0," to state
@@ -72,13 +73,13 @@ export default class Pokemon extends Component {
       this.state;
     return (
       <div className="pokemon">
-        <h4 className="name">Name: {name}</h4>
+        <h3 className="name">Name: {name}</h3>
         <div className="imgContainer">
           <img src={imgSrc} alt="name on front" />
           <img src={imgBck} alt="name on back" />
         </div>
-        <span className="weight">Weight: {weight}</span>
-        <span className="ability">Ability: {ability}</span>
+        <p className="weight">Weight: {weight}</p>
+        <p className="ability">Ability: {ability}</p>
         <div className="info">
           <h5>Level {level}</h5>
           {caught ? (
