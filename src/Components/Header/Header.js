@@ -6,7 +6,7 @@ import "./Header.css";
 
 // FUNCTIONAL COMPONENT
 function Header({ owner }) {
-  return <div className="header">{owner} Products</div>;
+  return <div className="header">{owner} PokeProducts</div>;
 }
 
 export default Header;
