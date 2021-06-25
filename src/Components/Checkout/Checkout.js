@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+// STYLING
+import "./Checkout.css";
 
 export default class Checkout extends Component {
   render() {
@@ -8,7 +10,8 @@ export default class Checkout extends Component {
         <form>
           <h3>Customer Information</h3>
           <div>
-            <label htmlFor="count">First Name: </label>
+            <label className="placeholder"
+              htmlFor="count">First Name: </label>
             <input
               id="count"
               type="text"
@@ -18,7 +21,7 @@ export default class Checkout extends Component {
             />
           </div>
           <div>
-            <label htmlFor="count">Last Name: </label>
+            <label className="placeholder" htmlFor="count">Last Name: </label>
             <input
               id="count"
               type="text"
@@ -28,7 +31,7 @@ export default class Checkout extends Component {
             />
           </div>
           <div>
-            <label htmlFor="count">Address: </label>
+            <label className="placeholder" htmlFor="count">Address: </label>
             <input
               id="count"
               type="text"
@@ -38,7 +41,7 @@ export default class Checkout extends Component {
             />
           </div>
           <div>
-            <label htmlFor="count">Phone Number: </label>
+            <label className="placeholder"  htmlFor="count">Phone Number: </label>
             <input
               id="count"
               type="phone"

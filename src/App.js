@@ -9,6 +9,7 @@ import Checkout from "./Components/Checkout/Checkout";
 import CreditCard from "./Components/CreditCard/CreditCard";
 import Cart from "./Components/Cart/Cart";
 import CartIcon from "./Components/CartIcon/CartIcon";
+import Footer from "./Components/Footer/Footer";
 // STYLING
 import "./App.css";
 
@@ -67,6 +68,7 @@ class App extends Component {
             handleCartUpdate={this.handleCartUpdate}
           />
           <Card />
+          <Footer />
           <div className="cart-container">
             <CartIcon cartCount={this.state.cartItems.length} />
             <Checkout />

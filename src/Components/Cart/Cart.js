@@ -25,9 +25,7 @@ export default class Cart extends Component {
     for (let i = 0; i < cartLength; i++) {
       sum = sum + this.props.cartItems[i].price;
     }
-
     let tax = sum * 0.1;
-
     let total = sum + tax;
 
     const cartItems = this.props.cartItems.map((name) => {

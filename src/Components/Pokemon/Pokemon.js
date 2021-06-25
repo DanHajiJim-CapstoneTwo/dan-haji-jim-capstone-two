@@ -1,6 +1,6 @@
 // DEPENDENCIES
 import React, { Component } from "react";
-import axios from "axios";
+import axios from 'axios';
 
 // STYLING
 import "./Pokemon.css";
@@ -24,17 +24,20 @@ export default class Pokemon extends Component {
     // GET POKEMON
     // https://pokeapi.co/api/v2/pokemon/
     // https://pokeapi.co/api/v2/pokemon/?offset=50&limit=50
-    axios.get(this.props.url).then((response) => {
-      console.log("PokeAPI response: ", response);
-      this.setState({
-        weight: response.data.weight,
-        ability: response.data.abilities[0].ability.name,
-        imgSrc: response.data.sprites.front_default,
-        imgBck: response.data.sprites.back_default,
+    axios.get(this.props.url)
+      .then((response) => {
+        console.log("PokeAPI response: ", response);
+        this.setState({
+          weight: response.data.weight,
+          ability: response.data.abilities[0].ability.name,
+          imgSrc: response.data.sprites.front_default,
+          imgBck: response.data.sprites.back_default,
+        });
       });
-    });
+    //   .catch ((error => {
+    //   console.log(error.response);
+    // });
   }
-
   // ADD TO CART
   // add "quantity: 0," to state
   // quantity: this.state.quantity + 1

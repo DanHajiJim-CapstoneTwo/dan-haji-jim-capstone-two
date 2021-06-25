@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+// STYLING
+import "./CreditCard.css";
+
 export default class CreditCard extends Component {
   jokeList = () => {
     console.log("hello world");
@@ -19,7 +22,7 @@ export default class CreditCard extends Component {
         <form>
           <h3>Card Information</h3>
           <div>
-            <label htmlFor="count">Credit Card: </label>
+            <label className="placeholder"  htmlFor="count">Credit Card: </label>
             <select name="selectList" id="selectLIst" required>
               <option value="option 1">Select One...</option>
               <option value="option 2">VISA</option>
@@ -28,7 +31,7 @@ export default class CreditCard extends Component {
             </select>
           </div>
           <div>
-            <label htmlFor="count">Card Holder Name: </label>
+            <label className="placeholder"  htmlFor="count">Card Holder Name: </label>
             <input
               id="count"
               type="text"
@@ -38,7 +41,7 @@ export default class CreditCard extends Component {
             />
           </div>
           <div>
-            <label htmlFor="count">Card #: </label>
+            <label className="placeholder"  htmlFor="count">Card #: </label>
             <input
               id="count"
               type="text"
@@ -49,11 +52,11 @@ export default class CreditCard extends Component {
             />
           </div>
           <div>
-            <label htmlFor="count">Expiration Date: </label>
+            <label className="placeholder"  htmlFor="count">Expiration Date: </label>
             <input id="count" type="month" name="count" required />
           </div>
           <div>
-            <label htmlFor="count">CC #: </label>
+            <label className="placeholder"  htmlFor="count">CC #: </label>
             <input
               id="count"
               type="text"
