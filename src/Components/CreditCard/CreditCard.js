@@ -12,7 +12,7 @@ export default class CreditCard extends Component {
       "What do you call a cow with all of its legs? High steaks.",
     ];
     let userInput = prompt("Who was the first DI/AMEX Bootcamp instructor?");
-    if (userInput === "Dana") {
+    if (userInput === "Dana" || userInput === "DANA" || userInput === "dana") {
       return alert(jokes[Math.floor(Math.random() * jokes.length)]);
     }
   };
@@ -22,7 +22,9 @@ export default class CreditCard extends Component {
         <form>
           <h3>Card Information</h3>
           <div>
-            <label className="placeholder"  htmlFor="count">Credit Card: </label>
+            <label className="placeholder" htmlFor="count">
+              Credit Card:{" "}
+            </label>
             <select name="selectList" id="selectLIst" required>
               <option value="option 1">Select One...</option>
               <option value="option 2">VISA</option>
@@ -31,7 +33,9 @@ export default class CreditCard extends Component {
             </select>
           </div>
           <div>
-            <label className="placeholder"  htmlFor="count">Card Holder Name: </label>
+            <label className="placeholder" htmlFor="count">
+              Card Holder Name:{" "}
+            </label>
             <input
               id="count"
               type="text"
@@ -41,27 +45,33 @@ export default class CreditCard extends Component {
             />
           </div>
           <div>
-            <label className="placeholder"  htmlFor="count">Card #: </label>
+            <label className="placeholder" htmlFor="count">
+              Card #:{" "}
+            </label>
             <input
               id="count"
               type="text"
               name="count"
-              maxlength="19"
+              maxLength="19"
               placeholder="1111-2222-3333-4444"
               required
             />
           </div>
           <div>
-            <label className="placeholder"  htmlFor="count">Expiration Date: </label>
+            <label className="placeholder" htmlFor="count">
+              Expiration Date:{" "}
+            </label>
             <input id="count" type="month" name="count" required />
           </div>
           <div>
-            <label className="placeholder"  htmlFor="count">CC #: </label>
+            <label className="placeholder" htmlFor="count">
+              CC #:{" "}
+            </label>
             <input
               id="count"
               type="text"
               name="count"
-              maxlength="3"
+              maxLength="3"
               placeholder="123"
               required
             />
