@@ -1,3 +1,5 @@
+My first group collaboration and second capstone project as part of the DI/AMEX Coding Bootcamp that demonstrated our continuing knowledge of React.
+
 # PokeProducts
 
 PokeProducts is a web based service that allows you to peruse the first 151 Pokemon ever created and catch, level up, and purchase a series of new companions to add to your collection.
